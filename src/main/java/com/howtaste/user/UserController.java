@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("user")
 @Controller
 public class UserController {
-	
+	//zzz
 	@RequestMapping("/sign_up_view")
 	public String signUpView(Model model) {
 		model.addAttribute("viewName", "user/sign_up");
