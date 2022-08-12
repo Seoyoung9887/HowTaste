@@ -119,15 +119,48 @@
     		if(name.length < 1){
     			alert("대표매뉴를 적어주세요");
     		}
-    		let val = $('#file').val();
+    		let file = $('#file').val();
     		if (file != '') {
     			let ext = file.split('.').pop().toLowerCase();
+    			
     			if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
     				alert("gif, png, jpg, jpeg 파일만 업로드 할 수 있습니다.");
     				$('#file').val(''); 
     				return;
     			}
-    		}	
+    		}
+    		let formData = new FormData();
+    		formData.append("name", name);
+    		formData.append("address", address);
+    		formData.append("number", number);
+    		formData.append("kind", kind);
+    		formData.append("price", price);
+    		formData.append("park", park);
+    		formData.append("businessHours", businessHours);
+    		formData.append("lastOder", lastOder);
+    		formData.append("closingDay", closingDay);
+    		formData.append("delegateMenu", delegateMenu);
+    		formData.append("file", $('#file')[0].files[0]); 
+    		
+    		
+    		$.ajax({
+    			type: "post"
+    			, url: "/admin/post/create"
+    			, data: formData
+    			, enctype: "multipart/form-data"    // 파일 업로드를 위한 필수 설정
+    			, processData: false    // 파일 업로드를 위한 필수 설정
+    			, contentType: false    // 파일 업로드를 위한 필수 설정
+    			, success: function(data) {
+    				if (data.result == "success") {
+    					location.reload();
+    				} else {
+    					alert(data.errorMessage);
+    				}
+    			}
+    			, error: function(e) {
+    				alert("메모 저장에 실패했습니다. 관리자에게 문의해주세요.");
+    			}
+    		});
     	});
     });
     

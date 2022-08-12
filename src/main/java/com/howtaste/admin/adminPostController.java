@@ -1,4 +1,4 @@
-package com.howtaste.post;
+package com.howtaste.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

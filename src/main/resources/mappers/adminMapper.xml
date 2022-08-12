@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.howtaste.admin.dao.AdminDAO">
+ 
+    <insert id="insertAdminPost">
+         INSERT INTO `post`
+         (  
+            `userId`
+            ,`name`
+			,`address`
+			,`number`
+			,`kind`
+			,`price`
+			,`park`
+			,`businessHours`
+			,`lastOder`
+			,`closingDay`
+			,`delegateMenu`
+			,`coordinate`
+			,`createdAt`
+			,`updatedAt`
+         )
+         VALUES
+         (
+            #{userId}
+            ,#{name}
+            ,#{address}
+            ,#{number}
+            ,#{kind}
+            ,#{price}
+            ,#{park}
+            ,#{businessHours}
+            ,#{lastOder}
+            ,#{closingDay}
+            ,#{delegateMenu}
+            ,#{coordinate}
+            ,NOW()
+            ,NOW()
+         )
+    </insert>  
+    <insert id="insertAdminImage">
+        INSERT INTO `post_image`
+        (
+        `postId`
+		,`imagePath`
+		,`createdAt`
+		,`updatedAt`
+        )
+        VALUES
+        (
+           #{postId}
+           ,#{imagePath}
+          ,NOW()
+          ,NOW()
+        )
+     
+     
+     
+     
+     
+    </insert>
+     
+ 
+ </mapper>
