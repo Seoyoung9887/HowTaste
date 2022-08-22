@@ -10,8 +10,7 @@ import com.howtaste.common.FileManagerService;
 @Service
 public class AdminBO {
 	
-	@Autowired
-	private AdminBO adminBO;
+	
 	@Autowired
 	private FileManagerService fileManager;
 	@Autowired
