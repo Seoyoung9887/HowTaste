@@ -14,7 +14,7 @@
      <div>
 	      <div class="d-flex">
 	         <div class="d-flex">
-	            <div>상호명</div>
+	            <div>${post.name}</div>
 	            <div>평점</div>
 	         </div>
 	         <div><button >리뷰쓰기</button></div>
@@ -22,39 +22,39 @@
 	      </div>
 	      <div>
 	         <div>
-	            <div>주소</div>
+	            <div>주소: ${post.address}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>전화번호</div>
+	            <div>전화번호: ${post.number}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>음식종류</div>
+	            <div>음식종류: ${post.kind}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>가격대</div>
+	            <div>가격대: ${post.price}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>주차</div>
+	            <div>주차: ${post.park}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>영업시간</div>
+	            <div>영업시간: ${post.businessHours}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>마지막주문</div>
+	            <div>마지막주문: ${post.lastOder}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>휴일</div>
+	            <div>휴일: ${post.closingDay}</div>
 	            <div></div>
 	         </div>
 	         <div>
-	            <div>대표음식</div>
+	            <div>대표음식: ${post.delegateMenu}</div>
 	            <div></div>
 	         </div>
 	      </div>

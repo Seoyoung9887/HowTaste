@@ -3,6 +3,27 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
  <mapper namespace="com.howtaste.post.dao.PostDAO">
+       <select id="selectList" resultType="com.howtaste.post.model.Post">
+         SELECT
+                `id`
+				,`userId`
+				,`name`
+				,`address`
+				,`number`
+				,`kind`
+				,`price`
+				,`park`
+				,`businessHours`
+				,`lastOder`
+				,`closingDay`
+				,`delegateMenu`
+				,`coordinate`
+				,`createdAt`
+				,`updatedAt`
+		 FROM
+		      `post`
+		
+       </select>
        <select id="selectPostList" resultType="com.howtaste.post.model.Post">
          SELECT
                 `id`

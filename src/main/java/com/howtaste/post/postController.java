@@ -19,24 +19,20 @@ public class postController {
 	
 	@RequestMapping("/post_main_view")
 	public String mainView(Model model) {
-		
+		List<Post> postList = postBO.getList();
+		model.addAttribute("postList", postList);
 		model.addAttribute("viewName", "post/post_main");
 		return"template/layout";
 	}
-//	@RequestMapping("/post_detail_view")
-//	public String detailView(
-//			@RequestParam("postId")int postId,
-//			Model model) {
-//		Post post= postBO.getPostList(postId);
-//		model.addAttribute("post", post);
-//		model.addAttribute("viewName", "post/post_detail");
-//		return"template/layout";
-//	}
 	@RequestMapping("/post_detail_view")
-	public String detailView(Model model) {
-		
+	public String detailView(
+			@RequestParam("postId")int postId,
+			Model model) {
+		Post post= postBO.getPostList(postId);
+		model.addAttribute("post", post);
 		model.addAttribute("viewName", "post/post_detail");
 		return"template/layout";
 	}
+
 
 }

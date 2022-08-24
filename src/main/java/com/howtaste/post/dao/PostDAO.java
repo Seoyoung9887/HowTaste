@@ -10,6 +10,8 @@ import com.howtaste.post.model.Post;
 @Repository
 public interface PostDAO {
     
+	
+	public List<Post> selectList();
 	public Post selectPostList(
 			@Param("postId")int postId);
 }

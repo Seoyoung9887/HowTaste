@@ -13,6 +13,10 @@ public class PostBO {
 	@Autowired
 	private PostDAO postDAO;
 	
+	public List<Post> getList(){
+		return postDAO.selectList();
+	}
+	
 	public Post getPostList(int postId){
 		return postDAO.selectPostList(postId);
 	}
