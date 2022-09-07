@@ -20,8 +20,37 @@
     </div>
     <div class="d-flex justify-content-end">
       <button type="button" id="clearBtn" id="cancle" >취소</button>
-      <button type="button" id="saveBtn" class="btn-light">작성완료</button>
+      <button type="button" id="saveBtn" class="btn-light" data-post-id="${Post.id}">작성완료</button>
     </div>
   </div> 
 </div>
-
+<script>
+$(document).ready(function(){
+	$('.saveBtn').on('click',function(e){
+		let postId = $(this).data('post-id');
+		let content = $(this).siblings("input").val().trim();
+		
+		if(content.length < 1){
+			alert("댓글 내용을 입력해주세요");
+			return;
+		}
+		$.ajax({
+			type:"post"
+			,url:"/comment/comment_create_view"
+			,data:{"postId":postId, "content":content}
+		    ,success:function(data){
+		    	if(data.result = "success"){
+		    		location.href="/post/post_list_view";
+		    	}else{
+		    		alert(data.errorMessage)
+		    	}
+		    	
+		    }
+		    ,error:function(e){
+		    	alert("삭제하는데 실패했습니다. 관리자에세 문의 주세요")
+		    }
+		})
+		
+	});
+});
+</script>
